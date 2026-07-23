@@ -91,9 +91,9 @@ timeline.push({
     <div class="instruction-box">
       <h2>説明</h2>
       <p>画面に英語の文が1文ずつ表示されます。</p>
-      <p>文法的に正しい文なら<strong>「文法的」</strong>、正しくない文なら<strong>「非文法的」</strong>を選んでください。</p>
-      <p>意味が現実的かどうかではなく、英語として文法的かどうかを判断してください。</p>
-      <p>各文には<strong>10秒</strong>の制限時間があります。分からない場合も、できるだけ回答してください。</p>
+      <p>英語として正しい文なら<strong>「正しい」</strong>、正しくない文なら<strong>「間違い」</strong>を選んでください。</p>
+      <p>意味が現実的かどうかではなく、英語として正しいかどうかを判断してください。</p>
+      <p>各文には<strong>10秒</strong>の制限時間があります。できるだけ早く回答してください。分からない場合も、できるだけ回答してください。</p>
       <p>最初に練習を2問行います。練習では回答後に正解が表示されます。</p>
     </div>
   `,
@@ -105,7 +105,7 @@ function createPracticeTrial(item, practiceIndex) {
   return {
     type: jsPsychHtmlButtonResponse,
     stimulus: `<div class="sentence">${item.sentence}</div>`,
-    choices: ["文法的", "非文法的"],
+    choices: ["正しい", "間違い"],
     trial_duration: CONFIG.trialDurationMs,
     response_ends_trial: true,
     data: {
@@ -132,11 +132,11 @@ function createPracticeFeedback() {
     stimulus: function() {
       const last = jsPsych.data.get().last(1).values()[0];
       if (last.timeout) {
-        return `<div class="feedback incorrect">時間切れです。正解は「${last.correct_answer === "grammatical" ? "文法的" : "非文法的"}」です。</div>`;
+        return `<div class="feedback incorrect">時間切れです。正解は「${last.correct_answer === "grammatical" ? "正しい" : "間違い"}」です。</div>`;
       }
       return last.accuracy === 1
         ? `<div class="feedback correct">正解です。</div>`
-        : `<div class="feedback incorrect">不正解です。正解は「${last.correct_answer === "grammatical" ? "文法的" : "非文法的"}」です。</div>`;
+        : `<div class="feedback incorrect">不正解です。正解は「${last.correct_answer === "grammatical" ? "正しい" : "間違い"}」です。</div>`;
     },
     choices: ["次へ"],
     data: { phase: "practice_feedback" }
@@ -170,7 +170,7 @@ randomizedTestItems.forEach((item, index) => {
   timeline.push({
     type: jsPsychHtmlButtonResponse,
     stimulus: `<div class="sentence">${item.sentence}</div>`,
-    choices: ["文法的", "非文法的"],
+    choices: ["正しい", "間違い"],
     trial_duration: CONFIG.trialDurationMs,
     response_ends_trial: true,
     data: {
