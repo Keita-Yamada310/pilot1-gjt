@@ -1,0 +1,77 @@
+body {
+  background: #ffffff;
+  color: #1f2937;
+  font-family: Arial, "Noto Sans JP", sans-serif;
+}
+
+.jspsych-content {
+  max-width: 1000px;
+}
+
+.instruction-box {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 22px;
+}
+
+.instruction-box h1,
+.instruction-box h2 {
+  text-align: center;
+}
+
+.small-note {
+  font-size: 18px;
+}
+
+.sentence {
+  font-size: 38px;
+  line-height: 1.5;
+  margin: 60px auto 55px;
+  max-width: 950px;
+  font-weight: 500;
+}
+
+.jspsych-btn {
+  min-width: 220px;
+  min-height: 78px;
+  margin: 16px 24px;
+  padding: 14px 24px;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.feedback {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.configuration-error {
+  max-width: 760px;
+  margin: 80px auto;
+  padding: 30px;
+  border: 2px solid #b91c1c;
+  border-radius: 10px;
+  font-family: Arial, "Noto Sans JP", sans-serif;
+}
+
+#jspsych-progressbar-container {
+  font-size: 17px;
+}
+
+@media (max-width: 700px) {
+  .sentence {
+    font-size: 28px;
+  }
+
+  .jspsych-btn {
+    min-width: 170px;
+    font-size: 21px;
+  }
+
+  .instruction-box {
+    font-size: 19px;
+  }
+}
