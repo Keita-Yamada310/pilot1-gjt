@@ -43,7 +43,7 @@ timeline.push({
   preamble: `
     <div class="instruction-box">
       <h1>英語文判断テスト</h1>
-      <p>最初に参加者ID（半角で学科M/E/I/C/A・クラス番号・英語氏名）を入力してください。</p>
+      <p>最初に参加者ID（半角で学科M/E/I/C/A・クラス番号）を入力してください。</p>
       <p class="small-note">氏名は入力しないでください。</p>
     </div>
   `,
