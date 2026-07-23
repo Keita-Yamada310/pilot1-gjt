@@ -160,7 +160,7 @@ timeline.push({
   choices: ["開始"],
   data: { phase: "start_test" },
   on_finish: function() {
-    jsPsych.setProgressBar(0);
+    jsPsych.progressBar.progress = 0;
   }
 });
 
@@ -188,7 +188,8 @@ randomizedTestItems.forEach((item, index) => {
       data.timeout = data.response === null;
       data.accuracy = data.timeout ? 0 : Number(data.response_label === data.correct_answer);
       data.rt_ms = data.rt;
-      jsPsych.setProgressBar((index + 1) / randomizedTestItems.length);
+     jsPsych.progressBar.progress =
+  (index + 1) / randomizedTestItems.length;
     }
   });
 });
